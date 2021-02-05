@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constant/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/modelService/ListingUpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/modelService/LogInService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/modelService/ManageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/modelService/SignUpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/modelmpl/LogInImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/modelmpl/SignUpImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/viewImpl/ListingUpViewImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/viewImpl/LogInViewImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/viewImpl/MainViewImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/viewImpl/ManageView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/viewImpl/SignUpViewImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/viewService/ListingUpViewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/viewService/LogInViewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/viewService/MainViewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/viewService/ManageViewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/viewService/SignUpIViewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vo/NameCardVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vo/UserVO.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1nvYMvTAmSZtaAuhM4NSXfIZJTG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="NameCardManager" />
+      <module name="NameCard Manager" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="" />
+      <created>1612271990012</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612271990012</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

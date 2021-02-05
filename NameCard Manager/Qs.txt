@@ -1,0 +1,2 @@
+1. Manage에서 grouping 처럼 한번에 impl에 모으는지
+listing 처럼 클래스 나누는지
