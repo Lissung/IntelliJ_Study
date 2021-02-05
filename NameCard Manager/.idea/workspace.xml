@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constant/Constant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/modelService/ListingUpService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/modelService/LogInService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/modelService/ManageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/modelService/SignUpService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/modelmpl/LogInImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/modelmpl/SignUpImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/viewImpl/ListingUpViewImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/viewImpl/LogInViewImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/viewImpl/MainViewImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/viewImpl/ManageView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/viewImpl/SignUpViewImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/viewService/ListingUpViewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/viewService/LogInViewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/viewService/MainViewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/viewService/ManageViewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/viewService/SignUpIViewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vo/NameCardVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vo/UserVO.java" afterDir="false" />
-    </list>
+    <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
