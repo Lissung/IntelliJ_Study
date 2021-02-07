@@ -25,7 +25,7 @@ public class ManageView implements ManageViewService {
         System.out.println("");
         System.out.println("2. Listing up Name cards you have");
         System.out.println("");
-        System.out.println("3. Adding a Name card contents");
+        System.out.println("3. Adding a new Name card");
         System.out.println("");
         System.out.println(">>");
         System.out.println("");
@@ -42,6 +42,7 @@ public class ManageView implements ManageViewService {
         }
     }
 
+    // searching
     public void searchingCardView() {
 
         System.out.println(" << Search a name card by >> ");
@@ -155,25 +156,54 @@ public class ManageView implements ManageViewService {
             System.out.println("");
             System.out.println(">> ");
 
-            String subjectEdit = scanner.nextLine();
-            NameCardVO nameCardVO_editted = manageService.editingContent(subjectEdit);
+            String subjectToEdit = scanner.nextLine();
+            NameCardVO nameCardVO_editted = manageService.editingContent(subjectToEdit);
             System.out.println(nameCardVO_editted.toString());
         }
 
     }
 
+    //listing
     public void listingUpCardView() {
         ListingUpViewService listingUpViewService = new ListingUpViewImpl();
         listingUpViewService.listingUpCardView();
     }
 
+
+    //adding
     public void addingCardView() {
+        System.out.println(" << Input contents for adding >> ");
         System.out.println("");
         System.out.println("");
+        System.out.println(" What is 'Company Name' ?? ");
         System.out.println("");
+        System.out.println(">> ");
+        String addCompanyName = scanner.nextLine();
         System.out.println("");
+        System.out.println(" What is 'Worker Name' ?? ");
+        System.out.println("");
+        System.out.println(">> ");
+        String addWokrerName = scanner.nextLine();
+        System.out.println("");
+        System.out.println(" What is 'Worker's position' ?? ");
+        System.out.println("");
+        System.out.println(">> ");
+        String addPosition = scanner.nextLine();
+        System.out.println("");
+        System.out.println(" What is 'Location fo Company' ?? ");
+        System.out.println("");
+        System.out.println(">>");
+        String addLocation = scanner.nextLine();
+        System.out.println("");
+        System.out.println(" What is 'Phone Number' ??' ");
+        System.out.println("");
+        System.out.println(">>");
+        int addPhoneNum = scanner.nextInt();
         System.out.println("");
 
+        NameCardVO add_NameCardVO = manageService.addingNewNameCard(addCompanyName,addWokrerName,
+                                                                addLocation,addPosition,addPhoneNum);
+        System.out.println(add_NameCardVO.toString());
     }
 
 }

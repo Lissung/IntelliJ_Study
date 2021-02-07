@@ -57,7 +57,7 @@ public class ManageImpl implements ManageService {
     }
 
     @Override
-    public NameCardVO editingContent(String subjectEdit) {
+    public NameCardVO editingContent(String subjectToEdit) {
         NameCardVO nameCardVO_edit = new NameCardVO();
 
         return nameCardVO_edit;
@@ -82,4 +82,17 @@ public class ManageImpl implements ManageService {
 
         return nameCardVO;
     }
+
+
+    //adding
+    @Override
+    public NameCardVO addingNewNameCard(String companyName, String workerName, String position,
+                                  String locationOfCompany, Integer phoneNumber) {
+
+        NameCardVO addNameCardVO = new NameCardVO();
+
+        return addNameCardVO;
+    }
+
+
 }

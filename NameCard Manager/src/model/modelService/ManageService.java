@@ -15,11 +15,15 @@ public interface ManageService {
     public int searchByCompanyName(String companyName);
     public int searchByWorkerName(String workerName);
     public int searchByPhoneNumber(String phoneNumber);
-    public NameCardVO editingContent(String subjectEdit);
+    public NameCardVO editingContent(String subjectToEdit);
 
     //Searching Conditions
     public NameCardVO showingResult_Company(String input);
     public NameCardVO showingResult_Worker(String input);
     public NameCardVO showingResult_PhoneNum(String input);
+
+    // adding
+    public NameCardVO addingNewNameCard( String companyName, String workerName, String position,
+                                   String locationOfCompany, Integer phoneNumber);
 
 }
