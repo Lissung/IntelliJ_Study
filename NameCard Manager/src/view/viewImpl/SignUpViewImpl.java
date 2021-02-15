@@ -43,8 +43,10 @@ public class SignUpViewImpl implements SignUpIViewService {
         System.out.println(">>");
         System.out.println("");
         String signUpPWD = scanner.nextLine();
-        signUpService.setSignUpID(signUpID, signUpPWD);
+        try {
+            signUpService.setSignUpID(signUpID, signUpPWD);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
-
 }
