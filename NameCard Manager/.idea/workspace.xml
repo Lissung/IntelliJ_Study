@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="210205">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db/DbMySQLconnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db/dbServcie/DbMySQLconnectionServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NameCard Manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NameCard Manager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/modelService/SignUpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelService/SignUpService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/modelmpl/LogInImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelmpl/LogInImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/constant/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/modelService/ManageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelService/ManageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/modelmpl/SignUpImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelmpl/SignUpImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/viewImpl/SignUpViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/viewImpl/SignUpViewImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/viewImpl/ListingUpViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/viewImpl/ListingUpViewImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/viewImpl/ManageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/viewImpl/ManageView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +104,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">

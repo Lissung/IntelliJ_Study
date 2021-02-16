@@ -15,7 +15,8 @@ public interface ManageService {
     public int searchByCompanyName(String companyName);
     public int searchByWorkerName(String workerName);
     public int searchByPhoneNumber(String phoneNumber);
-    public NameCardVO editingContent(String subjectToEdit);
+    public NameCardVO selectSubjectToEdit(String subjectToEdit, Long detailsToEdit);
+
 
     //Searching Conditions
     public NameCardVO showingResult_Company(String input);

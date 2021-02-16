@@ -14,27 +14,41 @@ public class ListingUpViewImpl implements ListingUpViewService {
     ListingUpService listingUpService = ListingUpImpl.getInstance();
     Scanner scanner = new Scanner(System.in);
 
+    여기해야됨
     public void listingUpCardView() {
-        System.out.println(" << Listing Up name card by >> ");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("1. Grouping by company name");
-        System.out.println("");
-        System.out.println("2. Ascending by worker name");
-        System.out.println("");
-        System.out.println("3. Descending by worker name");
-        System.out.println("");
-        System.out.println(">>");
+        boolean comingLisitngUpCardView = true;
 
-        int listingUpMenu = scanner.nextInt();
+        while (true) {
+            System.out.println(" << Listing Up name card by >> ");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("1. Grouping by company name");
+            System.out.println("");
+            System.out.println("2. Ascending by worker name");
+            System.out.println("");
+            System.out.println("3. Descending by worker name");
+            System.out.println("");
+            System.out.println(">>");
+            System.out.println("4. Exit Listing up card view");
+            System.out.println("");
+            System.out.println(">>");
 
-        switch (listingUpMenu){
-            case Constant.By_Grouping  :
-                this.listingUp_GroupingView();
-            case Constant.By_Ascending :
-                this.listingUp_AscendingView();
-            case Constant.By_Descending:
-                this.listingUp_DescendingView();
+            int listingUpMenu = scanner.nextInt();
+
+            switch (listingUpMenu) {
+                case Constant.By_Grouping:
+                    this.listingUp_GroupingView();
+                    break;
+                case Constant.By_Ascending:
+                    this.listingUp_AscendingView();
+                    break;
+                case Constant.By_Descending:
+                    this.listingUp_DescendingView();
+                    break;
+                case Constant.Exit_ListUpVIew:
+                    comingLisitngUpCardView = false;
+                    break;
+            }
         }
     }
 

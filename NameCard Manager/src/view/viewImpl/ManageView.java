@@ -8,6 +8,7 @@ import view.viewService.ManageViewService;
 import vo.NameCardVO;
 import vo.UserVO;
 
+import java.lang.ref.SoftReference;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,28 +18,40 @@ public class ManageView implements ManageViewService {
     Scanner scanner = new Scanner(System.in);
 
     public void manageMenuSelectingView() {
+        boolean comingManageView = true;
 
-        System.out.println("    <<   Select Menu   >>    ");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("1. Searching a Name card");
-        System.out.println("");
-        System.out.println("2. Listing up Name cards you have");
-        System.out.println("");
-        System.out.println("3. Adding a new Name card");
-        System.out.println("");
-        System.out.println(">>");
-        System.out.println("");
+        while (comingManageView) {
+            System.out.println("    <<   Select Menu   >>    ");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("1. Searching a Name card");
+            System.out.println("");
+            System.out.println("2. Listing up Name cards you have");
+            System.out.println("");
+            System.out.println("3. Adding a new Name card");
+            System.out.println("");
+            System.out.println("4. Exit");
+            System.out.println("");
+            System.out.println(">>");
+            System.out.println("");
 
-        int manageMenu = scanner.nextInt();
+            int manageMenu = scanner.nextInt();
 
-        switch (manageMenu) {
-            case Constant.Searching_Card:
-                this.searchingCardView();
-            case Constant.ListingUp_Card:
-                this.listingUpCardView();
-            case Constant.Adding_Card:
-                this.addingCardView();
+            switch (manageMenu) {
+                case Constant.Searching_Card:
+                    this.searchingCardView();
+                    break;
+                case Constant.ListingUp_Card:
+                    this.listingUpCardView();
+                    break;
+                case Constant.Adding_Card:
+                    this.addingCardView();
+                    break;
+                case Constant.Exit_ManageView:
+                    ;
+                    comingManageView = false;
+                    break;
+            }
         }
     }
 
@@ -71,74 +84,96 @@ public class ManageView implements ManageViewService {
         this.editingCardView();
     }
 
-    public void searchByCompanynameView(){
-        System.out.println(" << Input Company Name >> ");
-        System.out.println("");
-        System.out.println("");
-        System.out.println(">> ");
-        System.out.println("");
-        String companyName = scanner.nextLine();
+    public void searchByCompanynameView() {
+        boolean comingSearchByCompanyNameView = true;
 
-        int isCompanyName = manageService.searchByCompanyName(companyName);
+        while (comingSearchByCompanyNameView) {
+            System.out.println(" << Input Company Name >> ");
+            System.out.println("");
+            System.out.println("");
+            System.out.println(">> ");
+            System.out.println("");
+            String companyName = scanner.nextLine();
 
-        switch (isCompanyName) {
-            case Constant.is_Not_CompanyName:
-                System.out.println("Please check the Name of company again");
-            case Constant.is_CompanyName:
-                NameCardVO searchingResult_Compnany = manageService.showingResult_Company(companyName);
-                System.out.println(" << Contents >> ");
-                System.out.println("");
-                System.out.println("");
-                System.out.println(searchingResult_Compnany.toString());
+            int isCompanyName = manageService.searchByCompanyName(companyName);
+
+            switch (isCompanyName) {
+                case Constant.is_Not_CompanyName:
+                    System.out.println("Please check the Name of company again");
+                    break;
+                case Constant.is_CompanyName:
+                    NameCardVO searchingResult_Compnany = manageService.showingResult_Company(companyName);
+                    System.out.println(" << Contents >> ");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println(searchingResult_Compnany.toString());
+                    comingSearchByCompanyNameView = false;
+                    break;
+            }
         }
     }
 
-    public void searchByWorkerNameView(){
-        System.out.println(" << Input Worker Name >> ");
-        System.out.println("");
-        System.out.println("");
-        System.out.println(">> ");
-        System.out.println("");
-        String workerName = scanner.nextLine();
+    public void searchByWorkerNameView() {
+        boolean comingSearchByWorkerNameView = true;
 
-        int isWorkerName = manageService.searchByWorkerName(workerName);
+        while (comingSearchByWorkerNameView) {
+            System.out.println(" << Input Worker Name >> ");
+            System.out.println("");
+            System.out.println("");
+            System.out.println(">> ");
+            System.out.println("");
+            String workerName = scanner.nextLine();
 
-        switch (isWorkerName) {
-            case Constant.is_Not_WorkerName:
-                System.out.println("Please check the Name of worker again");
-            case Constant.is_WorkerName:
-                NameCardVO searchingResult_Worker = manageService.showingResult_Worker(workerName);
-                System.out.println(" << Contents >> ");
-                System.out.println("");
-                System.out.println("");
-                System.out.println(searchingResult_Worker.toString());
+            int isWorkerName = manageService.searchByWorkerName(workerName);
+
+            switch (isWorkerName) {
+                case Constant.is_Not_WorkerName:
+                    System.out.println("Please check the Name of worker again");
+                    break;
+                case Constant.is_WorkerName:
+                    NameCardVO searchingResult_Worker = manageService.showingResult_Worker(workerName);
+                    System.out.println(" << Contents >> ");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println(searchingResult_Worker.toString());
+                    comingSearchByWorkerNameView = false;
+                    break;
+            }
         }
     }
 
-    public void searchByPhoneNumberView(){
-        System.out.println(" << Input Phone Number >> ");
-        System.out.println("");
-        System.out.println("");
-        System.out.println(">> ");
-        System.out.println("");
-        String phoneNumber = scanner.nextLine();
+    public void searchByPhoneNumberView() {
+        boolean comingSearchByPhoneNumberView = true;
 
-        int isPhoneNumber = manageService.searchByPhoneNumber(phoneNumber);
+        while (comingSearchByPhoneNumberView) {
+            System.out.println(" << Input Phone Number >> ");
+            System.out.println("");
+            System.out.println("");
+            System.out.println(">> ");
+            System.out.println("");
+            String phoneNumber = scanner.nextLine();
 
-        switch (isPhoneNumber) {
-            case Constant.is_Not_PhoneNumber:
-                System.out.println("Please check the Name of worker again");
-            case Constant.is_PhoneNumber:
-                NameCardVO searchingResult_PhoneNumber = manageService.showingResult_Worker(phoneNumber);
-                System.out.println(" << Contents >> ");
-                System.out.println("");
-                System.out.println("");
-                System.out.println(searchingResult_PhoneNumber.toString());
+            int isPhoneNumber = manageService.searchByPhoneNumber(phoneNumber);
+
+            switch (isPhoneNumber) {
+                case Constant.is_Not_PhoneNumber:
+                    System.out.println("Please check the Name of worker again");
+                    break;
+                case Constant.is_PhoneNumber:
+                    NameCardVO searchingResult_PhoneNumber = manageService.showingResult_Worker(phoneNumber);
+                    System.out.println(" << Contents >> ");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println(searchingResult_PhoneNumber.toString());
+                    comingSearchByPhoneNumberView = false;
+                    break;
+            }
         }
     }
 
     @Override
     public void editingCardView() {
+
         System.out.println(" << Edit contents on Card? >> ");
         System.out.println("");
         System.out.println("1. Yes ");
@@ -148,20 +183,33 @@ public class ManageView implements ManageViewService {
         System.out.println(">> ");
 
         int isEditing = scanner.nextInt();
-        if(isEditing==Constant.is_Editing){
-            System.out.println("                << Input a subject to change the content >> ");
-            System.out.println("");
-            System.out.println("(companyName/ workerName / position / locationOfCompany / phoneNumber");
-            System.out.println("");
-            System.out.println("");
-            System.out.println(">> ");
+        switch (isEditing) {
+            case Constant.is_Editing:
+                System.out.println("                << Input a subject to change the content >> ");
+                System.out.println("");
+                System.out.println("(companyName/ workerName / position / locationOfCompany / phoneNumber");
+                System.out.println("");
+                System.out.println("");
+                System.out.println(">> ");
+                String subjectToEdit = scanner.nextLine();
+                System.out.println("");
+                System.out.println("");
+                System.out.println(" <<Input details for changing the content >> ");
+                System.out.println("");
+                System.out.println("");
+                System.out.println(">> ");
+                Long detailsToEdit = scanner.nextLong();
 
-            String subjectToEdit = scanner.nextLine();
-            NameCardVO nameCardVO_editted = manageService.editingContent(subjectToEdit);
-            System.out.println(nameCardVO_editted.toString());
+
+                NameCardVO nameCardVO_editted = manageService.selectSubjectToEdit(subjectToEdit, detailsToEdit);
+                System.out.println(nameCardVO_editted.toString());
+                break;
+
+            case Constant.is_Not_Editing:
+                break;
         }
-
     }
+
 
     //listing
     public void listingUpCardView() {
@@ -172,38 +220,60 @@ public class ManageView implements ManageViewService {
 
     //adding
     public void addingCardView() {
-        System.out.println(" << Input contents for adding >> ");
-        System.out.println("");
-        System.out.println("");
-        System.out.println(" What is 'Company Name' ?? ");
-        System.out.println("");
-        System.out.println(">> ");
-        String addCompanyName = scanner.nextLine();
-        System.out.println("");
-        System.out.println(" What is 'Worker Name' ?? ");
-        System.out.println("");
-        System.out.println(">> ");
-        String addWokrerName = scanner.nextLine();
-        System.out.println("");
-        System.out.println(" What is 'Worker's position' ?? ");
-        System.out.println("");
-        System.out.println(">> ");
-        String addPosition = scanner.nextLine();
-        System.out.println("");
-        System.out.println(" What is 'Location fo Company' ?? ");
-        System.out.println("");
-        System.out.println(">>");
-        String addLocation = scanner.nextLine();
-        System.out.println("");
-        System.out.println(" What is 'Phone Number' ??' ");
-        System.out.println("");
-        System.out.println(">>");
-        int addPhoneNum = scanner.nextInt();
-        System.out.println("");
+       boolean comingAddingCardView = true;
 
-        NameCardVO add_NameCardVO = manageService.addingNewNameCard(addCompanyName,addWokrerName,
-                                                                addLocation,addPosition,addPhoneNum);
-        System.out.println(add_NameCardVO.toString());
+       while (comingAddingCardView) {
+           System.out.println(" << Do add new card?? >> ");
+           System.out.println("");
+           System.out.println("");
+           System.out.println(" Yes, press 1 ");
+           System.out.println(" No,  press 2 ");
+           System.out.println("");
+           System.out.println(">> ");
+           int continueAddingCardView = scanner.nextInt();
+
+
+           switch (continueAddingCardView) {
+               case Constant.Do_Add:
+                   System.out.println(" << Input contents for adding >> ");
+                   System.out.println("");
+                   System.out.println("");
+                   System.out.println(" What is 'Company Name' ?? ");
+                   System.out.println("");
+                   System.out.println(">> ");
+                   String addCompanyName = scanner.nextLine();
+                   System.out.println("");
+                   System.out.println(" What is 'Worker Name' ?? ");
+                   System.out.println("");
+                   System.out.println(">> ");
+                   String addWokrerName = scanner.nextLine();
+                   System.out.println("");
+                   System.out.println(" What is 'Worker's position' ?? ");
+                   System.out.println("");
+                   System.out.println(">> ");
+                   String addPosition = scanner.nextLine();
+                   System.out.println("");
+                   System.out.println(" What is 'Location fo Company' ?? ");
+                   System.out.println("");
+                   System.out.println(">>");
+                   String addLocation = scanner.nextLine();
+                   System.out.println("");
+                   System.out.println(" What is 'Phone Number' ??' ");
+                   System.out.println("");
+                   System.out.println(">>");
+                   int addPhoneNum = scanner.nextInt();
+                   System.out.println("");
+
+                   impl하기
+                   NameCardVO add_NameCardVO = manageService.addingNewNameCard(addCompanyName, addWokrerName,
+                           addLocation, addPosition, addPhoneNum);
+                   System.out.println(add_NameCardVO.toString());
+                   break;
+
+               case Constant.Exit_AddingView:
+                   comingAddingCardView = false;
+                   break;
+           }
+       }
     }
-
 }
