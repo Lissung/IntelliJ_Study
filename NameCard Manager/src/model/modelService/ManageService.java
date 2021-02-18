@@ -2,8 +2,6 @@ package model.modelService;
 
 import vo.NameCardVO;
 
-import java.util.List;
-
 public interface ManageService {
 
     //Searching menu
@@ -15,7 +13,7 @@ public interface ManageService {
     public int searchByCompanyName(String companyName);
     public int searchByWorkerName(String workerName);
     public int searchByPhoneNumber(String phoneNumber);
-    public NameCardVO selectSubjectToEdit(String subjectToEdit, Long detailsToEdit);
+    public NameCardVO selectSubjectToEdit(NameCardVO resultNameCardVO, int subjectToEdit, Long detailsToEdit);
 
 
     //Searching Conditions

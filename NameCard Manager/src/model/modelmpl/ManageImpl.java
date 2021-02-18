@@ -3,7 +3,6 @@ package model.modelmpl;
 import constant.Constant;
 import model.modelService.ManageService;
 import vo.NameCardVO;
-import vo.UserVO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -60,6 +59,7 @@ public class ManageImpl implements ManageService {
         return instance;
 
     }
+
     //searching
     @Override
     public int searchByCompanyName(String companyName) {
@@ -79,12 +79,13 @@ public class ManageImpl implements ManageService {
 
         int isComName = 0;
         for (NameCardVO nameCardVO : nameCardVOList) {
-            if (companyName.equalsIgnoreCase(nameCardVO.getCompanyName())){
+            if (companyName.equalsIgnoreCase(nameCardVO.getCompanyName())) {
                 isComName = Constant.is_CompanyName;
             } else isComName = Constant.is_Not_CompanyName;
         }
         return isComName;
     }
+
     public int searchByWorkerName(String workerName) {
         List<NameCardVO> nameCardVOList = new ArrayList<>();
 
@@ -103,12 +104,13 @@ public class ManageImpl implements ManageService {
 
         int isWorkerName = 0;
         for (NameCardVO nameCardVO : nameCardVOList) {
-            if (workerName.equalsIgnoreCase(nameCardVO.getWorkerName())){
+            if (workerName.equalsIgnoreCase(nameCardVO.getWorkerName())) {
                 isWorkerName = Constant.is_Not_WorkerName;
             } else isWorkerName = Constant.is_WorkerName;
         }
         return isWorkerName;
     }
+
     public int searchByPhoneNumber(String phoneNumber) {
         List<NameCardVO> nameCardVOList = new ArrayList<>();
 
@@ -127,7 +129,7 @@ public class ManageImpl implements ManageService {
 
         int isPhonNumber = 0;
         for (NameCardVO nameCardVO : nameCardVOList) {
-            if (phoneNumber.equalsIgnoreCase(nameCardVO.getWorkerName())){
+            if (phoneNumber.equalsIgnoreCase(nameCardVO.getWorkerName())) {
                 isPhonNumber = Constant.is_Not_PhoneNumber;
             } else isPhonNumber = Constant.is_PhoneNumber;
         }
@@ -138,22 +140,23 @@ public class ManageImpl implements ManageService {
     @Override
     public void searchingCard() {
     }
+
     @Override
     public void listingUpCard() {
     }
+
     @Override
     public void addingCard() {
     }
 
 
-
     // Edit >> 얘를 하나의 클래스로 두고 instance로 불러오면 여러번 반복으로 할 때 데이터 덜 잡아 먹을 듯?
     @Override
-    public NameCardVO selectSubjectToEdit(String subjectToEdit, Long detailsToEdit) {
+    public NameCardVO selectSubjectToEdit(NameCardVO resultNameCardVO, int subjectToEdit, Long detailsToEdit) {
         NameCardVO nameCardVO_edit = new NameCardVO();
         List<NameCardVO> nameCardVOList = new ArrayList<>();
 
-        try (Connection connection = getConnection();
+       /* try (Connection connection = getConnection();
              PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM namecardvo");
              ResultSet rs = pstmt.executeQuery()) {
 
@@ -173,17 +176,29 @@ public class ManageImpl implements ManageService {
                 nameCardVOList.add(nameCardVO_edit);
             }
         } catch (Exception e) {
-        }
+        }*/
 
-        for (NameCardVO nameCardVO : nameCardVOList) {
-            // subject 찾는 메서드?
-            // 이후 content 변경
+        // for (NameCardVO nameCardVO : nameCardVOList) {
+       // if (resultNameCardVO.getWorkerName().equalsIgnoreCase(nameCardVO_edit.getWorkerName())) {
+            switch (subjectToEdit) {
+                case Constant.Edit_companyName:
+                    try (Connection connection = getConnection();
+                         PreparedStatement pstmt = connection.prepareStatement(
+                                 "UPDATE namecardvo SET companyName = detailsToEdit WHERE workerName = resultNameCardVO.getWorkerName"))
+                                         {
+                                 pstmt.executeUpdate();
+                       } catch(Exception e){
+            }
+            case Constant.Edit_workerName:
+            case Constant.Edit_position:
+            case Constant.Edit_locationOfCompany:
+            case Constant.Edit_phoneNumber:
         }
+        // }
+    //}
 
         return nameCardVO_edit;
-    }
-
-
+}
 
 
     @Override
@@ -211,8 +226,9 @@ public class ManageImpl implements ManageService {
     @Override
     public NameCardVO addingNewNameCard(String companyName, String workerName, String position,
                                         String locationOfCompany, Integer phoneNumber) {
-
         NameCardVO addNameCardVO = new NameCardVO();
+        List<NameCardVO> nameCardVOList = new ArrayList<>();
+
 
         return addNameCardVO;
     }

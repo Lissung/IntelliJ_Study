@@ -82,6 +82,9 @@ public class LogInImpl implements LogInService {
 
         for (UserVO userVO : userListToCheckLogin) {
             if (logInID.equalsIgnoreCase(userVO.getUserID())) {
+                if(userVO.getUserID().isEmpty()){
+                    isLogInID = Constant.id_Not_Exist;
+                }
                 if (logInPWD.equalsIgnoreCase(userVO.getUserPWD())) {
                     isLogInID = Constant.logIN_Success;
                 } else isLogInID = Constant.pwd_Is_Not_Correct;

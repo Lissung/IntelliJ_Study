@@ -14,7 +14,7 @@ public class ListingUpViewImpl implements ListingUpViewService {
     ListingUpService listingUpService = ListingUpImpl.getInstance();
     Scanner scanner = new Scanner(System.in);
 
-    여기해야됨
+
     public void listingUpCardView() {
         boolean comingLisitngUpCardView = true;
 
@@ -70,7 +70,7 @@ public class ListingUpViewImpl implements ListingUpViewService {
         System.out.println("");
         System.out.println("");
 
-        List<NameCardVO> listByAscending = listingUpService.ascendingByName();
+        List<List<NameCardVO>> listByAscending = listingUpService.ascendingByName();
         System.out.println(listByAscending.toString());
     }
 
@@ -80,7 +80,7 @@ public class ListingUpViewImpl implements ListingUpViewService {
         System.out.println("");
         System.out.println("");
 
-        List<NameCardVO> listByDedscending = listingUpService.descendingByName();
+        List<List<NameCardVO>> listByDedscending = listingUpService.descendingByName();
         System.out.println(listByDedscending.toString());
     }
 

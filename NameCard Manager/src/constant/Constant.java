@@ -33,6 +33,12 @@ public class Constant {
     // Edit
     public final static int is_Editing         = 1;
     public final static int is_Not_Editing     = 2;
+    public final static int Edit_companyName         = 1;
+    public final static int Edit_workerName          = 2;
+    public final static int Edit_position            = 3;
+    public final static int Edit_locationOfCompany   = 4;
+    public final static int Edit_phoneNumber         = 5;
+
 
     public final static int is_Not_WorkerName = 1;
     public final static int is_WorkerName     = 2;

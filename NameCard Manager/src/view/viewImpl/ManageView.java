@@ -6,10 +6,7 @@ import model.modelmpl.ManageImpl;
 import view.viewService.ListingUpViewService;
 import view.viewService.ManageViewService;
 import vo.NameCardVO;
-import vo.UserVO;
 
-import java.lang.ref.SoftReference;
-import java.util.List;
 import java.util.Scanner;
 
 public class ManageView implements ManageViewService {
@@ -68,24 +65,27 @@ public class ManageView implements ManageViewService {
         System.out.println("");
         System.out.println(">>");
 
+        NameCardVO resultNameCardVO = new NameCardVO();
         int searchingCondition = scanner.nextInt();
 
         switch (searchingCondition) {
             case Constant.By_CompanyName:
-                this.searchByCompanynameView();
+                resultNameCardVO = this.searchByCompanynameView();
                 break;
             case Constant.By_WorkerName:
-                this.searchByWorkerNameView();
+                resultNameCardVO = this.searchByWorkerNameView();
                 break;
             case Constant.By_PhoneNumber:
-                this.searchByPhoneNumberView();
+                resultNameCardVO = this.searchByPhoneNumberView();
                 break;
         }
-        this.editingCardView();
+        this.editingCardView(resultNameCardVO);
     }
 
-    public void searchByCompanynameView() {
+    // 애는 키값이 아니라 안될거 같음
+    public NameCardVO searchByCompanynameView() {
         boolean comingSearchByCompanyNameView = true;
+        NameCardVO searchingResult_Compnany = new NameCardVO();
 
         while (comingSearchByCompanyNameView) {
             System.out.println(" << Input Company Name >> ");
@@ -102,7 +102,7 @@ public class ManageView implements ManageViewService {
                     System.out.println("Please check the Name of company again");
                     break;
                 case Constant.is_CompanyName:
-                    NameCardVO searchingResult_Compnany = manageService.showingResult_Company(companyName);
+                    searchingResult_Compnany = manageService.showingResult_Company(companyName);
                     System.out.println(" << Contents >> ");
                     System.out.println("");
                     System.out.println("");
@@ -111,10 +111,12 @@ public class ManageView implements ManageViewService {
                     break;
             }
         }
+        return searchingResult_Compnany;
     }
 
-    public void searchByWorkerNameView() {
+    public NameCardVO searchByWorkerNameView() {
         boolean comingSearchByWorkerNameView = true;
+        NameCardVO searchingResult_Worker = new NameCardVO();
 
         while (comingSearchByWorkerNameView) {
             System.out.println(" << Input Worker Name >> ");
@@ -131,7 +133,7 @@ public class ManageView implements ManageViewService {
                     System.out.println("Please check the Name of worker again");
                     break;
                 case Constant.is_WorkerName:
-                    NameCardVO searchingResult_Worker = manageService.showingResult_Worker(workerName);
+                    searchingResult_Worker = manageService.showingResult_Worker(workerName);
                     System.out.println(" << Contents >> ");
                     System.out.println("");
                     System.out.println("");
@@ -140,10 +142,12 @@ public class ManageView implements ManageViewService {
                     break;
             }
         }
+        return searchingResult_Worker;
     }
 
-    public void searchByPhoneNumberView() {
+    public NameCardVO searchByPhoneNumberView() {
         boolean comingSearchByPhoneNumberView = true;
+        NameCardVO searchingResult_PhoneNumber= new NameCardVO();
 
         while (comingSearchByPhoneNumberView) {
             System.out.println(" << Input Phone Number >> ");
@@ -160,7 +164,7 @@ public class ManageView implements ManageViewService {
                     System.out.println("Please check the Name of worker again");
                     break;
                 case Constant.is_PhoneNumber:
-                    NameCardVO searchingResult_PhoneNumber = manageService.showingResult_Worker(phoneNumber);
+                    searchingResult_PhoneNumber = manageService.showingResult_Worker(phoneNumber);
                     System.out.println(" << Contents >> ");
                     System.out.println("");
                     System.out.println("");
@@ -169,10 +173,11 @@ public class ManageView implements ManageViewService {
                     break;
             }
         }
+    return searchingResult_PhoneNumber;
     }
 
     @Override
-    public void editingCardView() {
+    public void editingCardView(NameCardVO resultNameCardVO) {
 
         System.out.println(" << Edit contents on Card? >> ");
         System.out.println("");
@@ -187,11 +192,11 @@ public class ManageView implements ManageViewService {
             case Constant.is_Editing:
                 System.out.println("                << Input a subject to change the content >> ");
                 System.out.println("");
-                System.out.println("(companyName/ workerName / position / locationOfCompany / phoneNumber");
+                System.out.println("(1. companyName/ 2. workerName / 3. position / 4. locationOfCompany / 5. phoneNumber");
                 System.out.println("");
                 System.out.println("");
                 System.out.println(">> ");
-                String subjectToEdit = scanner.nextLine();
+                int subjectToEdit = scanner.nextInt();
                 System.out.println("");
                 System.out.println("");
                 System.out.println(" <<Input details for changing the content >> ");
@@ -201,7 +206,7 @@ public class ManageView implements ManageViewService {
                 Long detailsToEdit = scanner.nextLong();
 
 
-                NameCardVO nameCardVO_editted = manageService.selectSubjectToEdit(subjectToEdit, detailsToEdit);
+                NameCardVO nameCardVO_editted = manageService.selectSubjectToEdit(resultNameCardVO, subjectToEdit, detailsToEdit);
                 System.out.println(nameCardVO_editted.toString());
                 break;
 
@@ -264,7 +269,6 @@ public class ManageView implements ManageViewService {
                    int addPhoneNum = scanner.nextInt();
                    System.out.println("");
 
-                   impl하기
                    NameCardVO add_NameCardVO = manageService.addingNewNameCard(addCompanyName, addWokrerName,
                            addLocation, addPosition, addPhoneNum);
                    System.out.println(add_NameCardVO.toString());
