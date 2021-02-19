@@ -78,6 +78,9 @@ public class SignUpImpl implements SignUpService {
         }
 
         int isIdExist_ = 0;
+        if(userVOList.size()==0){
+            isIdExist_= Constant.ID_Available;
+        }
         for (UserVO userVO : userVOList) {
             if (signUpID.equalsIgnoreCase(userVO.getUserID())) {
                 isIdExist_ = Constant.ID_Unavailable;

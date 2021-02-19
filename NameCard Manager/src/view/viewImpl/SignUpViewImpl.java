@@ -29,7 +29,9 @@ public class SignUpViewImpl implements SignUpIViewService {
 
             switch (idCheck){
                 case Constant.ID_Unavailable:
-                    System.out.println("The ID is used already. Input another ID");
+                    System.out.println(" ** The ID is used already. Input another ID  **");
+                    System.out.println("");
+                    System.out.println("");
                     break;
                 case Constant.ID_Available:
                     isIdExist = false;
@@ -48,5 +50,8 @@ public class SignUpViewImpl implements SignUpIViewService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(" **  Success Sign-up **  ");
+        System.out.println("");
+        System.out.println("");
     }
 }

@@ -199,7 +199,7 @@ public class ManageView implements ManageViewService {
                 int subjectToEdit = scanner.nextInt();
                 System.out.println("");
                 System.out.println("");
-                System.out.println(" <<Input details for changing the content >> ");
+                System.out.println(" << Input details for changing the content >> ");
                 System.out.println("");
                 System.out.println("");
                 System.out.println(">> ");

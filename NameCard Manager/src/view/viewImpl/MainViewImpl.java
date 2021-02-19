@@ -33,8 +33,10 @@ public class MainViewImpl implements MainViewService {
             switch (mainSelecting) {
                 case Constant.LogIN:
                     logInViewService.logInView();
+                    break;
                 case Constant.SingIn:
                     signUpIViewService.signUpView();
+                    break;
                 case Constant.Exit:
                     main = false;
                     break;

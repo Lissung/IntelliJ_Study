@@ -35,14 +35,20 @@ public class LogInViewImpl implements LogInViewService {
 
             switch (isLogIn){
                 case Constant.logIN_Success:
-                    System.out.println(" Log In Success!! ");
+                    System.out.println(" ** Log In Success!! **");
+                    System.out.println("");
+                    System.out.println("");
                     manageViewService.manageMenuSelectingView();
                 case Constant.id_Not_Exist:
-                    System.out.println("ID is not Exist. Please sign up first");
+                    System.out.println("** ID is not Exist. Please sign up first  **");
+                    System.out.println("");
+                    System.out.println("");
                     logIn = false;
                     break;
                 case Constant.pwd_Is_Not_Correct:
-                    System.out.println("Incorrect PWD. Please try again");
+                    System.out.println(" **  Incorrect PWD. Please try again  **");
+                    System.out.println("");
+                    System.out.println("");
                     break;
             }
 
