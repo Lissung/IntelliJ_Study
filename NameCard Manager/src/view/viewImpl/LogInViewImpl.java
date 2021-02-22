@@ -39,6 +39,7 @@ public class LogInViewImpl implements LogInViewService {
                     System.out.println("");
                     System.out.println("");
                     manageViewService.manageMenuSelectingView();
+                    break;
                 case Constant.id_Not_Exist:
                     System.out.println("** ID is not Exist. Please sign up first  **");
                     System.out.println("");

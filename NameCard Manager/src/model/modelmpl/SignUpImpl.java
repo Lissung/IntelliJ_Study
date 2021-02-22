@@ -15,7 +15,7 @@ public class SignUpImpl implements SignUpService {
 
     public Connection getConnection() throws Exception {
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/namecardmanager_db";
+        String url = "jdbc:mysql://localhost:3306/namecardmanager_db?serverTimezone=Asia/Seoul";
         String username = "root";
         String password = "1234";
 
@@ -75,6 +75,7 @@ public class SignUpImpl implements SignUpService {
                 // nameCard.setCompany(rs.getString("comapny"));
             }
         } catch (Exception e) {
+            System.out.println("SignUp Id Error : " + e);
         }
 
         int isIdExist_ = 0;
@@ -91,15 +92,14 @@ public class SignUpImpl implements SignUpService {
 
     @Override
     public void setSignUpID(String signUpID, String signUpPWD) throws Exception {
-        {
             try (Connection connection = getConnection();
-                 PreparedStatement pstmt = connection.prepareStatement("INSERT INTO table(UserID, UserPWD) VALUES(?, ?)")) {
-                pstmt.setString(1, "signUpID");
-                pstmt.setString(2, "signUpPWD");
+                 PreparedStatement pstmt = connection.prepareStatement("INSERT INTO userslist(UserID, UserPWD) VALUES(?, ?)")) {
+                pstmt.setString(1, signUpID);
+                pstmt.setString(2, signUpPWD);
                 pstmt.executeUpdate();
             } catch (Exception e) {
+                System.out.println("SignUp Error : " + e);
             }
-        }
     }
 
 

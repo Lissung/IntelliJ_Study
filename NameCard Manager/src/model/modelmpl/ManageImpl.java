@@ -16,7 +16,7 @@ public class ManageImpl implements ManageService {
 
     public Connection getConnection() throws Exception {
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/namecardmanager_db";
+        String url = "jdbc:mysql://localhost:3306/namecardmanager_db?serverTimezone=Asia/Seoul";
         String username = "root";
         String password = "1234";
 
@@ -68,8 +68,9 @@ public class ManageImpl implements ManageService {
              PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM namecardvo");
              ResultSet rs = pstmt.executeQuery()) {
 
-            NameCardVO nameCardVO = new NameCardVO();
+
             while (rs.next()) {
+                NameCardVO nameCardVO = new NameCardVO();
                 String companyNameCompare = rs.getString("companyName");
                 nameCardVO.setCompanyName(companyNameCompare);
                 nameCardVOList.add(nameCardVO);

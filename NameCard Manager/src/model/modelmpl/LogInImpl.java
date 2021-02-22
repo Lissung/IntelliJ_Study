@@ -15,7 +15,7 @@ public class LogInImpl implements LogInService {
 
     public Connection getConnection() throws Exception {
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/namecardmanager_db";
+        String url = "jdbc:mysql://localhost:3306/namecardmanager_db?serverTimezone=Asia/Seoul";
         String username = "root";
         String password = "1234";
 
@@ -76,6 +76,7 @@ public class LogInImpl implements LogInService {
                 userListToCheckLogin.add(userList);
             }
         } catch (Exception e) {
+            System.out.println("SignUp Id Error : " + e);
         }
 
         int isLogInID = 0;

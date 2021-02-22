@@ -15,9 +15,8 @@ public class SignUpViewImpl implements SignUpIViewService {
     @Override
     public void signUpView() {
         String signUpID = null;
-        boolean isIdExist = true;
 
-        while (isIdExist) {
+
             System.out.println("    <<  Make New ID / PWD  >>");
             System.out.println("");
             System.out.println("");
@@ -27,18 +26,20 @@ public class SignUpViewImpl implements SignUpIViewService {
             signUpID = scanner.nextLine();
             int idCheck = signUpService.checkSignUpID(signUpID);
 
-            switch (idCheck){
+            switch (idCheck) {
                 case Constant.ID_Unavailable:
                     System.out.println(" ** The ID is used already. Input another ID  **");
                     System.out.println("");
                     System.out.println("");
                     break;
                 case Constant.ID_Available:
-                    isIdExist = false;
+                    this.inputSignUpPWD(signUpID);
                     break;
             }
         }
 
+
+     private void inputSignUpPWD(String signUpID){
         System.out.println("");
         System.out.println("2. Input the PWD you want");
         System.out.println("");

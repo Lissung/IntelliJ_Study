@@ -26,10 +26,12 @@ public class Constant {
     public final static int By_CompanyName = 1;
     public final static int By_WorkerName  = 2;
     public final static int By_PhoneNumber = 3;
+    public final static int EXIT_SEARCHING = 4;
 
     // Searching
     public final static int is_Not_CompanyName = 1;
     public final static int is_CompanyName     = 2;
+
     // Edit
     public final static int is_Editing         = 1;
     public final static int is_Not_Editing     = 2;

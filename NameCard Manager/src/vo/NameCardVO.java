@@ -68,4 +68,8 @@ public class NameCardVO {
     public void setPhoneNumber(Integer phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public boolean isEmpty() {
+        return true;
+    }
 }
