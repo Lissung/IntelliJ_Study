@@ -76,13 +76,19 @@ public class ManageImpl implements ManageService {
                 nameCardVOList.add(nameCardVO);
             }
         } catch (Exception e) {
+            System.out.println("SignUp Id Error : " + e);
         }
-
+        List<NameCardVO> searchedNameCardVOList = new ArrayList<>();
         int isComName = 0;
         for (NameCardVO nameCardVO : nameCardVOList) {
             if (companyName.equalsIgnoreCase(nameCardVO.getCompanyName())) {
+                searchedNameCardVOList.add(nameCardVO);
+            }
+            if (searchedNameCardVOList.isEmpty()) {
+                isComName = Constant.is_Not_CompanyName;
+            } else {
                 isComName = Constant.is_CompanyName;
-            } else isComName = Constant.is_Not_CompanyName;
+            }
         }
         return isComName;
     }
@@ -94,20 +100,24 @@ public class ManageImpl implements ManageService {
              PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM namecardvo");
              ResultSet rs = pstmt.executeQuery()) {
 
-            NameCardVO nameCardVO = new NameCardVO();
+
             while (rs.next()) {
+                NameCardVO nameCardVO = new NameCardVO();
                 String workerNameCompare = rs.getString("workerName");
                 nameCardVO.setWorkerName(workerNameCompare);
                 nameCardVOList.add(nameCardVO);
             }
         } catch (Exception e) {
+            System.out.println("SignUp Id Error : " + e);
         }
 
         int isWorkerName = 0;
         for (NameCardVO nameCardVO : nameCardVOList) {
-            if (workerName.equalsIgnoreCase(nameCardVO.getWorkerName())) {
+            if (nameCardVOList.isEmpty()) {
                 isWorkerName = Constant.is_Not_WorkerName;
-            } else isWorkerName = Constant.is_WorkerName;
+            } else {
+                isWorkerName = Constant.is_WorkerName;
+            }
         }
         return isWorkerName;
     }
@@ -119,22 +129,26 @@ public class ManageImpl implements ManageService {
              PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM namecardvo");
              ResultSet rs = pstmt.executeQuery()) {
 
-            NameCardVO nameCardVO = new NameCardVO();
+
             while (rs.next()) {
-                int phoneNumberCompare = rs.getInt("phoneNumber");
-                nameCardVO.setPhoneNumber(phoneNumberCompare);
+                NameCardVO nameCardVO = new NameCardVO();
+                String phonenumberNameCompare = rs.getString("phoneNumber");
+                nameCardVO.setWorkerName(phonenumberNameCompare);
                 nameCardVOList.add(nameCardVO);
             }
         } catch (Exception e) {
+            System.out.println("SignUp Id Error : " + e);
         }
 
-        int isPhonNumber = 0;
+        int isWorkerName = 0;
         for (NameCardVO nameCardVO : nameCardVOList) {
-            if (phoneNumber.equalsIgnoreCase(nameCardVO.getWorkerName())) {
-                isPhonNumber = Constant.is_Not_PhoneNumber;
-            } else isPhonNumber = Constant.is_PhoneNumber;
+            if (nameCardVOList.isEmpty()) {
+                isWorkerName = Constant.is_Not_PhoneNumber;
+            } else {
+                isWorkerName = Constant.is_PhoneNumber;
+            }
         }
-        return isPhonNumber;
+        return isWorkerName;
     }
 
 
@@ -180,46 +194,136 @@ public class ManageImpl implements ManageService {
         }*/
 
         // for (NameCardVO nameCardVO : nameCardVOList) {
-       // if (resultNameCardVO.getWorkerName().equalsIgnoreCase(nameCardVO_edit.getWorkerName())) {
-            switch (subjectToEdit) {
-                case Constant.Edit_companyName:
-                    try (Connection connection = getConnection();
-                         PreparedStatement pstmt = connection.prepareStatement(
-                                 "UPDATE namecardvo SET companyName = detailsToEdit WHERE workerName = resultNameCardVO.getWorkerName"))
-                                         {
-                                 pstmt.executeUpdate();
-                       } catch(Exception e){
-            }
+        // if (resultNameCardVO.getWorkerName().equalsIgnoreCase(nameCardVO_edit.getWorkerName())) {
+        switch (subjectToEdit) {
+            case Constant.Edit_companyName:
+                try (Connection connection = getConnection();
+                     PreparedStatement pstmt = connection.prepareStatement(
+                             "UPDATE namecardvo SET companyName = detailsToEdit WHERE workerName = resultNameCardVO.getWorkerName")) {
+                    pstmt.executeUpdate();
+                } catch (Exception e) {
+                }
             case Constant.Edit_workerName:
             case Constant.Edit_position:
             case Constant.Edit_locationOfCompany:
             case Constant.Edit_phoneNumber:
         }
         // }
-    //}
+        //}
 
         return nameCardVO_edit;
-}
+    }
 
 
     @Override
-    public NameCardVO showingResult_Company(String input) {
-        NameCardVO nameCardVO = new NameCardVO();
+    public List<NameCardVO> showingResult_Company(String inputCompanyName) {
 
-        return nameCardVO;
+        List<NameCardVO> showingResultList = new ArrayList<>();
+        try (Connection connection = getConnection();
+             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM namecardvo");
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                NameCardVO nameCardVO = new NameCardVO();
+                int phoneNumber = rs.getInt("phoneNumber");
+                String workerName = rs.getString("workerName");
+                String position = rs.getString("position");
+                String locationOfCompany = rs.getString("locationOfCompany");
+                String companyName = rs.getString("companyName");
+
+                nameCardVO.setPhoneNumber(phoneNumber);
+                nameCardVO.setWorkerName(workerName);
+                nameCardVO.setPosition(position);
+                nameCardVO.setLocationOfCompany(locationOfCompany);
+                nameCardVO.setCompanyName(companyName);
+
+                showingResultList.add(nameCardVO);
+
+            }
+        } catch (Exception e) {
+            System.out.println("SignUp Id Error : " + e);
+        }
+
+        List<NameCardVO> listOnCompanyName = new ArrayList<>();
+        for (NameCardVO nameCarVO : showingResultList) {
+            if (nameCarVO.getCompanyName().equalsIgnoreCase(inputCompanyName)) {
+                listOnCompanyName.add(nameCarVO);
+            }
+        }
+        return listOnCompanyName;
     }
 
     @Override
-    public NameCardVO showingResult_Worker(String input) {
-        NameCardVO nameCardVO = new NameCardVO();
+    public NameCardVO showingResult_Worker(String inputWorkerName) {
+        List<NameCardVO> showingResultList = new ArrayList<>();
+        try (Connection connection = getConnection();
+             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM namecardvo");
+             ResultSet rs = pstmt.executeQuery()) {
 
-        return nameCardVO;
+            while (rs.next()) {
+                NameCardVO nameCardVO = new NameCardVO();
+                int phoneNumber = rs.getInt("phoneNumber");
+                String workerName = rs.getString("workerName");
+                String position = rs.getString("position");
+                String locationOfCompany = rs.getString("locationOfCompany");
+                String companyName = rs.getString("companyName");
+
+                nameCardVO.setPhoneNumber(phoneNumber);
+                nameCardVO.setWorkerName(workerName);
+                nameCardVO.setPosition(position);
+                nameCardVO.setLocationOfCompany(locationOfCompany);
+                nameCardVO.setCompanyName(companyName);
+
+                showingResultList.add(nameCardVO);
+
+            }
+        } catch (Exception e) {
+            System.out.println("SignUp Id Error : " + e);
+        }
+
+        NameCardVO onWorkerName = new NameCardVO();
+        for (NameCardVO nameCarVO : showingResultList) {
+            if (nameCarVO.getWorkerName().equalsIgnoreCase(inputWorkerName)) {
+                onWorkerName = nameCarVO;
+            }
+        }
+        return onWorkerName;
     }
 
-    public NameCardVO showingResult_PhoneNum(String input) {
-        NameCardVO nameCardVO = new NameCardVO();
+    public NameCardVO showingResult_PhoneNum(String inputPhoneNumber) {
+        List<NameCardVO> showingResultList = new ArrayList<>();
+        try (Connection connection = getConnection();
+             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM namecardvo");
+             ResultSet rs = pstmt.executeQuery()) {
 
-        return nameCardVO;
+            while (rs.next()) {
+                NameCardVO nameCardVO = new NameCardVO();
+                int phoneNumber = rs.getInt("phoneNumber");
+                String workerName = rs.getString("workerName");
+                String position = rs.getString("position");
+                String locationOfCompany = rs.getString("locationOfCompany");
+                String companyName = rs.getString("companyName");
+
+                nameCardVO.setPhoneNumber(phoneNumber);
+                nameCardVO.setWorkerName(workerName);
+                nameCardVO.setPosition(position);
+                nameCardVO.setLocationOfCompany(locationOfCompany);
+                nameCardVO.setCompanyName(companyName);
+
+                showingResultList.add(nameCardVO);
+
+            }
+        } catch (Exception e) {
+            System.out.println("SignUp Id Error : " + e);
+        }
+
+        NameCardVO onPhoneNumber = new NameCardVO();
+        for (NameCardVO nameCarVO : showingResultList) {
+            if (nameCarVO.getPhoneNumber().equals(inputPhoneNumber)) {
+                onPhoneNumber = nameCarVO;
+            }
+        }
+        return onPhoneNumber;
     }
 
 

@@ -7,6 +7,8 @@ import view.viewService.ListingUpViewService;
 import view.viewService.ManageViewService;
 import vo.NameCardVO;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ManageView implements ManageViewService {
@@ -70,12 +72,13 @@ public class ManageView implements ManageViewService {
             System.out.println(">>");
 
             NameCardVO resultNameCardVO = new NameCardVO();
+
             int searchingCondition = scanner.nextInt();
             scanner.nextLine();
 
             switch (searchingCondition) {
                 case Constant.By_CompanyName:
-                    resultNameCardVO = this.searchByCompanynameView();
+                    this.searchByCompanynameView();
                     break;
                 case Constant.By_WorkerName:
                     resultNameCardVO = this.searchByWorkerNameView();
@@ -87,22 +90,23 @@ public class ManageView implements ManageViewService {
                     comingSearchinCardView = false;
                     break;
             }
-            if (comingSearchinCardView = false){
+            resultNameCardVO.equals(null);
+            if (comingSearchinCardView = false) {
                 break;
-            }
-            else if (resultNameCardVO.isEmpty()){
+            } else if (resultNameCardVO.equals(null)) {
                 break;
+            } else if (searchingCondition == Constant.By_CompanyName) {
+                break;
+            } else {
+                this.editingCardView(resultNameCardVO);
             }
-                else{
-                    this.editingCardView(resultNameCardVO);
-                }
         }
     }
 
-    // 애는 키값이 아니라 안될거 같음
-    public NameCardVO searchByCompanynameView() {
+    // 애는 키값이 아니라 안될거 같음 → 찾아서 showing만 하고 edit 안하면 될듯
+    public List<NameCardVO> searchByCompanynameView() {
 
-        NameCardVO searchingResult_Compnany = new NameCardVO();
+        List<NameCardVO> searchingResult_Compnany = new ArrayList<>();
 
 
         System.out.println(" << Input Company Name >> ");
@@ -123,11 +127,10 @@ public class ManageView implements ManageViewService {
                 searchingResult_Compnany = manageService.showingResult_Company(companyName);
                 System.out.println(" << Contents >> ");
                 System.out.println("");
-                System.out.println("");
                 System.out.println(searchingResult_Compnany.toString());
+                System.out.println("");
                 break;
         }
-
         return searchingResult_Compnany;
     }
 
@@ -135,38 +138,34 @@ public class ManageView implements ManageViewService {
         boolean comingSearchByWorkerNameView = true;
         NameCardVO searchingResult_Worker = new NameCardVO();
 
-        while (comingSearchByWorkerNameView) {
-            System.out.println(" << Input Worker Name >> ");
-            System.out.println("");
-            System.out.println("");
-            System.out.println(">> ");
-            System.out.println("");
-            String workerName = scanner.nextLine();
 
-            int isWorkerName = manageService.searchByWorkerName(workerName);
+        System.out.println(" << Input Worker Name >> ");
+        System.out.println("");
+        System.out.println("");
+        System.out.println(">> ");
+        System.out.println("");
+        String workerName = scanner.nextLine();
 
-            switch (isWorkerName) {
-                case Constant.is_Not_WorkerName:
-                    System.out.println("Please check the Name of worker again");
-                    break;
-                case Constant.is_WorkerName:
-                    searchingResult_Worker = manageService.showingResult_Worker(workerName);
-                    System.out.println(" << Contents >> ");
-                    System.out.println("");
-                    System.out.println("");
-                    System.out.println(searchingResult_Worker.toString());
-                    comingSearchByWorkerNameView = false;
-                    break;
-            }
+        int isWorkerName = manageService.searchByWorkerName(workerName);
+
+        switch (isWorkerName) {
+            case Constant.is_Not_WorkerName:
+                System.out.println("Please check the Name of worker again");
+                System.out.println("");
+                break;
+            case Constant.is_WorkerName:
+                searchingResult_Worker = manageService.showingResult_Worker(workerName);
+                System.out.println(" << Contents >> ");
+                System.out.println("");
+                System.out.println(searchingResult_Worker.toString());
+                break;
         }
         return searchingResult_Worker;
     }
 
     public NameCardVO searchByPhoneNumberView() {
-        boolean comingSearchByPhoneNumberView = true;
-        NameCardVO searchingResult_PhoneNumber = new NameCardVO();
 
-        while (comingSearchByPhoneNumberView) {
+        NameCardVO searchingResult_PhoneNumber = new NameCardVO();
             System.out.println(" << Input Phone Number >> ");
             System.out.println("");
             System.out.println("");
@@ -178,18 +177,16 @@ public class ManageView implements ManageViewService {
 
             switch (isPhoneNumber) {
                 case Constant.is_Not_PhoneNumber:
-                    System.out.println("Please check the Name of worker again");
+                    System.out.println("Please check the Name of Phone Number again");
+                    System.out.println("");
                     break;
                 case Constant.is_PhoneNumber:
                     searchingResult_PhoneNumber = manageService.showingResult_Worker(phoneNumber);
                     System.out.println(" << Contents >> ");
                     System.out.println("");
-                    System.out.println("");
                     System.out.println(searchingResult_PhoneNumber.toString());
-                    comingSearchByPhoneNumberView = false;
                     break;
             }
-        }
         return searchingResult_PhoneNumber;
     }
 

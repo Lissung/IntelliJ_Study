@@ -2,6 +2,8 @@ package model.modelService;
 
 import vo.NameCardVO;
 
+import java.util.List;
+
 public interface ManageService {
 
     //Searching menu
@@ -17,7 +19,7 @@ public interface ManageService {
 
 
     //Searching Conditions
-    public NameCardVO showingResult_Company(String input);
+    public List<NameCardVO> showingResult_Company(String input);
     public NameCardVO showingResult_Worker(String input);
     public NameCardVO showingResult_PhoneNum(String input);
 

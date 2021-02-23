@@ -16,7 +16,7 @@ public class NameCardVO {
                 ", position='" + position + '\'' +
                 ", locationOfCompany='" + locationOfCompany + '\'' +
                 ", phoneNumber=" + phoneNumber +
-                '}';
+                '}'+"\n";
     }
 
     public NameCardVO(){}

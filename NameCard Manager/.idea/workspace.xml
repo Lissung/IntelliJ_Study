@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="210219">
+    <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="210222">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/constant/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/modelmpl/LogInImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelmpl/LogInImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/modelService/ManageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelService/ManageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/modelmpl/SignUpImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelmpl/SignUpImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/viewImpl/LogInViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/viewImpl/LogInViewImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/viewImpl/ManageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/viewImpl/ManageView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/viewImpl/SignUpViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/viewImpl/SignUpViewImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/viewService/ManageViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/viewService/ManageViewService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vo/NameCardVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vo/NameCardVO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613749615994</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="210222">
+      <created>1614005977150</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614005977150</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,25 +194,71 @@
     <MESSAGE value="210216" />
     <MESSAGE value="210218" />
     <MESSAGE value="210219" />
-    <option name="LAST_COMMIT_MESSAGE" value="210219" />
+    <MESSAGE value="210222" />
+    <option name="LAST_COMMIT_MESSAGE" value="210222" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java</url>
-          <line>86</line>
+          <line>320</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java</url>
-          <line>82</line>
+          <line>321</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java</url>
+          <line>322</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java</url>
+          <line>325</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/viewImpl/ManageView.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/viewImpl/ManageView.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/viewImpl/ManageView.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/viewImpl/ManageView.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/viewImpl/ManageView.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/viewImpl/ManageView.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/viewImpl/ManageView.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java</url>
+          <line>319</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
