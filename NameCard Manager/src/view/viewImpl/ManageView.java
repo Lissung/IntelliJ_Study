@@ -90,15 +90,16 @@ public class ManageView implements ManageViewService {
                     comingSearchinCardView = false;
                     break;
             }
-            resultNameCardVO.equals(null);
+
             if (comingSearchinCardView = false) {
                 break;
-            } else if (resultNameCardVO.equals(null)) {
+            } else if (resultNameCardVO.getWorkerName()==null) {
                 break;
             } else if (searchingCondition == Constant.By_CompanyName) {
                 break;
             } else {
                 this.editingCardView(resultNameCardVO);
+                break;
             }
         }
     }
@@ -171,7 +172,8 @@ public class ManageView implements ManageViewService {
             System.out.println("");
             System.out.println(">> ");
             System.out.println("");
-            String phoneNumber = scanner.nextLine();
+            int phoneNumber = scanner.nextInt();
+            scanner.nextLine();
 
             int isPhoneNumber = manageService.searchByPhoneNumber(phoneNumber);
 
@@ -181,7 +183,7 @@ public class ManageView implements ManageViewService {
                     System.out.println("");
                     break;
                 case Constant.is_PhoneNumber:
-                    searchingResult_PhoneNumber = manageService.showingResult_Worker(phoneNumber);
+                    searchingResult_PhoneNumber = manageService.showingResult_PhoneNum(phoneNumber);
                     System.out.println(" << Contents >> ");
                     System.out.println("");
                     System.out.println(searchingResult_PhoneNumber.toString());
@@ -239,9 +241,7 @@ public class ManageView implements ManageViewService {
 
     //adding
     public void addingCardView() {
-        boolean comingAddingCardView = true;
 
-        while (comingAddingCardView) {
             System.out.println(" << Do add new card?? >> ");
             System.out.println("");
             System.out.println("");
@@ -250,6 +250,7 @@ public class ManageView implements ManageViewService {
             System.out.println("");
             System.out.println(">> ");
             int continueAddingCardView = scanner.nextInt();
+            scanner.nextLine();
 
 
             switch (continueAddingCardView) {
@@ -286,12 +287,14 @@ public class ManageView implements ManageViewService {
                     NameCardVO add_NameCardVO = manageService.addingNewNameCard(addCompanyName, addWokrerName,
                             addLocation, addPosition, addPhoneNum);
                     System.out.println(add_NameCardVO.toString());
+                    System.out.println("");
+                    System.out.println(" ** Done it !! **");
+                    System.out.println("");
                     break;
 
                 case Constant.Exit_AddingView:
-                    comingAddingCardView = false;
                     break;
-            }
+
         }
     }
 }

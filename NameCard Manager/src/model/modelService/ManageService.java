@@ -14,14 +14,14 @@ public interface ManageService {
     //Searching
     public int searchByCompanyName(String companyName);
     public int searchByWorkerName(String workerName);
-    public int searchByPhoneNumber(String phoneNumber);
+    public int searchByPhoneNumber(int phoneNumber);
     public NameCardVO selectSubjectToEdit(NameCardVO resultNameCardVO, int subjectToEdit, Long detailsToEdit);
 
 
     //Searching Conditions
     public List<NameCardVO> showingResult_Company(String input);
     public NameCardVO showingResult_Worker(String input);
-    public NameCardVO showingResult_PhoneNum(String input);
+    public NameCardVO showingResult_PhoneNum(int input);
 
     // adding
     public NameCardVO addingNewNameCard( String companyName, String workerName, String position,

@@ -122,7 +122,7 @@ public class ManageImpl implements ManageService {
         return isWorkerName;
     }
 
-    public int searchByPhoneNumber(String phoneNumber) {
+    public int searchByPhoneNumber(int phoneNumber) {
         List<NameCardVO> nameCardVOList = new ArrayList<>();
 
         try (Connection connection = getConnection();
@@ -132,23 +132,23 @@ public class ManageImpl implements ManageService {
 
             while (rs.next()) {
                 NameCardVO nameCardVO = new NameCardVO();
-                String phonenumberNameCompare = rs.getString("phoneNumber");
-                nameCardVO.setWorkerName(phonenumberNameCompare);
+                int phonenumberCompare = rs.getInt("phoneNumber");
+                nameCardVO.setPhoneNumber(phonenumberCompare);
                 nameCardVOList.add(nameCardVO);
             }
         } catch (Exception e) {
             System.out.println("SignUp Id Error : " + e);
         }
 
-        int isWorkerName = 0;
+        int isPhoneNumber = 0;
         for (NameCardVO nameCardVO : nameCardVOList) {
             if (nameCardVOList.isEmpty()) {
-                isWorkerName = Constant.is_Not_PhoneNumber;
+                isPhoneNumber = Constant.is_Not_PhoneNumber;
             } else {
-                isWorkerName = Constant.is_PhoneNumber;
+                isPhoneNumber = Constant.is_PhoneNumber;
             }
         }
-        return isWorkerName;
+        return isPhoneNumber;
     }
 
 
@@ -168,14 +168,15 @@ public class ManageImpl implements ManageService {
     // Edit >> 얘를 하나의 클래스로 두고 instance로 불러오면 여러번 반복으로 할 때 데이터 덜 잡아 먹을 듯?
     @Override
     public NameCardVO selectSubjectToEdit(NameCardVO resultNameCardVO, int subjectToEdit, Long detailsToEdit) {
-        NameCardVO nameCardVO_edit = new NameCardVO();
+
         List<NameCardVO> nameCardVOList = new ArrayList<>();
 
-       /* try (Connection connection = getConnection();
+        try (Connection connection = getConnection();
              PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM namecardvo");
              ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
+                NameCardVO nameCardVO_edit = new NameCardVO();
                 int phoneNumber = rs.getInt("phoneNumber");
                 String workerName = rs.getString("workerName");
                 String position = rs.getString("position");
@@ -191,7 +192,8 @@ public class ManageImpl implements ManageService {
                 nameCardVOList.add(nameCardVO_edit);
             }
         } catch (Exception e) {
-        }*/
+            System.out.println("SignUp Id Error : " + e);
+        }
 
         // for (NameCardVO nameCardVO : nameCardVOList) {
         // if (resultNameCardVO.getWorkerName().equalsIgnoreCase(nameCardVO_edit.getWorkerName())) {
@@ -211,7 +213,7 @@ public class ManageImpl implements ManageService {
         // }
         //}
 
-        return nameCardVO_edit;
+        return null;
     }
 
 
@@ -290,7 +292,7 @@ public class ManageImpl implements ManageService {
         return onWorkerName;
     }
 
-    public NameCardVO showingResult_PhoneNum(String inputPhoneNumber) {
+    public NameCardVO showingResult_PhoneNum(int inputPhoneNumber) {
         List<NameCardVO> showingResultList = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM namecardvo");
@@ -331,12 +333,35 @@ public class ManageImpl implements ManageService {
     @Override
     public NameCardVO addingNewNameCard(String companyName, String workerName, String position,
                                         String locationOfCompany, Integer phoneNumber) {
-        NameCardVO addNameCardVO = new NameCardVO();
-        List<NameCardVO> nameCardVOList = new ArrayList<>();
 
+
+        try (Connection connection = getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(
+                     "INSERT INTO namecardvo(companyName, workerName, position, locationOfCompany, phoneNumber) " +
+                             "VALUES(?, ?, ?, ?, ?)")) {
+            pstmt.setString(1, companyName);
+            pstmt.setString(2, workerName);
+            pstmt.setString(3, position);
+            pstmt.setString(4, locationOfCompany);
+            pstmt.setInt(5, phoneNumber);
+            pstmt.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println("SignUp Id Error : " + e);
+        }
+
+        NameCardVO addNameCardVO = new NameCardVO();
+
+        addNameCardVO.setPhoneNumber(phoneNumber);
+        addNameCardVO.setWorkerName(workerName);
+        addNameCardVO.setPosition(position);
+        addNameCardVO.setLocationOfCompany(locationOfCompany);
+        addNameCardVO.setCompanyName(companyName);
 
         return addNameCardVO;
     }
-
-
 }
+
+
+
+
