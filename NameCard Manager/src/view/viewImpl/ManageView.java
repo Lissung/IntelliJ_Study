@@ -91,9 +91,9 @@ public class ManageView implements ManageViewService {
                     break;
             }
 
-            if (comingSearchinCardView = false) {
+            if (comingSearchinCardView == false) {
                 break;
-            } else if (resultNameCardVO.getWorkerName()==null) {
+            } else if (resultNameCardVO != null && resultNameCardVO.getWorkerName()==null) {
                 break;
             } else if (searchingCondition == Constant.By_CompanyName) {
                 break;

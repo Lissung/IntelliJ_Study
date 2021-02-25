@@ -197,18 +197,30 @@ public class ManageImpl implements ManageService {
 
         // for (NameCardVO nameCardVO : nameCardVOList) {
         // if (resultNameCardVO.getWorkerName().equalsIgnoreCase(nameCardVO_edit.getWorkerName())) {
+        String sql = "";
+        String key = "";
+        String value = "";
         switch (subjectToEdit) {
             case Constant.Edit_companyName:
-                try (Connection connection = getConnection();
-                     PreparedStatement pstmt = connection.prepareStatement(
-                             "UPDATE namecardvo SET companyName = detailsToEdit WHERE workerName = resultNameCardVO.getWorkerName")) {
-                    pstmt.executeUpdate();
-                } catch (Exception e) {
-                }
+                key = "companyName";
+                value = "temp";
+              break;
             case Constant.Edit_workerName:
+                sql = "UPDATE namecardvo SET companyName = detailsToEdit WHERE workerName = resultNameCardVO.getWorkerName";
+                break;
             case Constant.Edit_position:
+                sql = "UPDATE namecardvo SET companyName = detailsToEdit WHERE workerName = resultNameCardVO.getWorkerName";
+                break;
             case Constant.Edit_locationOfCompany:
             case Constant.Edit_phoneNumber:
+        }
+
+        sql = "UPDATE namecardvo SET companyName = detailsToEdit WHERE " + key + " = " + value;
+
+        try (Connection connection = getConnection();
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.executeUpdate();
+        } catch (Exception e) {
         }
         // }
         //}
