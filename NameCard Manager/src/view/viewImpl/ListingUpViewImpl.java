@@ -18,7 +18,7 @@ public class ListingUpViewImpl implements ListingUpViewService {
     public void listingUpCardView() {
         boolean comingLisitngUpCardView = true;
 
-        while (true) {
+        while (comingLisitngUpCardView) {
             System.out.println(" << Listing Up name card by >> ");
             System.out.println("");
             System.out.println("");
@@ -28,12 +28,12 @@ public class ListingUpViewImpl implements ListingUpViewService {
             System.out.println("");
             System.out.println("3. Descending by worker name");
             System.out.println("");
-            System.out.println(">>");
             System.out.println("4. Exit Listing up card view");
             System.out.println("");
             System.out.println(">>");
 
             int listingUpMenu = scanner.nextInt();
+            scanner.nextLine();
 
             switch (listingUpMenu) {
                 case Constant.By_Grouping:
@@ -61,7 +61,12 @@ public class ListingUpViewImpl implements ListingUpViewService {
         String companyNameForGrouping = scanner.nextLine();
 
         List<NameCardVO> listByGrouping = listingUpService.groupingByCompany(companyNameForGrouping);
+
+        System.out.println(" << Result >>");
+        System.out.println("");
         System.out.println(listByGrouping.toString());
+        System.out.println("");
+        System.out.println("");
     }
 
     @Override
@@ -70,8 +75,10 @@ public class ListingUpViewImpl implements ListingUpViewService {
         System.out.println("");
         System.out.println("");
 
-        List<List<NameCardVO>> listByAscending = listingUpService.ascendingByName();
+        List<NameCardVO> listByAscending = listingUpService.ascendingByName();
         System.out.println(listByAscending.toString());
+        System.out.println("");
+        System.out.println("");
     }
 
     @Override
@@ -80,8 +87,10 @@ public class ListingUpViewImpl implements ListingUpViewService {
         System.out.println("");
         System.out.println("");
 
-        List<List<NameCardVO>> listByDedscending = listingUpService.descendingByName();
+        List<NameCardVO> listByDedscending = listingUpService.descendingByName();
         System.out.println(listByDedscending.toString());
+        System.out.println("");
+        System.out.println("");
     }
 
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="210223">
+    <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="210224">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/modelService/ManageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelService/ManageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/viewImpl/ManageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/viewImpl/ManageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/modelService/ListingUpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelService/ListingUpService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/viewImpl/ListingUpViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/viewImpl/ListingUpViewImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614095330869</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="210224">
+      <created>1614178477282</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1614178477282</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,9 +208,39 @@
     <MESSAGE value="210219" />
     <MESSAGE value="210222" />
     <MESSAGE value="210223" />
-    <option name="LAST_COMMIT_MESSAGE" value="210223" />
+    <MESSAGE value="210224" />
+    <option name="LAST_COMMIT_MESSAGE" value="210224" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/modelmpl/ListingUpImpl.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="clazz" language="JAVA" />
