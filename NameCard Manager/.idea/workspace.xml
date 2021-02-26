@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="210225">
+    <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="210225_edit">
+      <change afterPath="$PROJECT_DIR$/../Lotto/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lotto/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lotto/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lotto/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lotto/Lotto.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lotto/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lotto/src/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/modelmpl/ManageImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/viewImpl/ManageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/viewImpl/ManageView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +102,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mysql-connector-java-8.0.22.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lotto" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -192,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614263108101</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="210225_edit">
+      <created>1614266597155</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1614266597155</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,7 +228,8 @@
     <MESSAGE value="210223" />
     <MESSAGE value="210224" />
     <MESSAGE value="210225" />
-    <option name="LAST_COMMIT_MESSAGE" value="210225" />
+    <MESSAGE value="210225_edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="210225_edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
