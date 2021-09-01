@@ -6,10 +6,18 @@ public class Main {
     public static void main(String[] args) {
         Service service = new Service();
 
-        List result = service.fiveSets();
+        List<int[]> result = service.fiveSets();
 
-        System.out.println(result.toString());
+        for (int[] ints : result) {
+            for (int anInt : ints) {
+                System.out.print("[ " + anInt + "] ");
+            }
+            System.out.println("\n");
+        }
+
     }
 
+
 }
+
 

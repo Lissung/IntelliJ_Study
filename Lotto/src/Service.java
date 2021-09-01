@@ -1,19 +1,17 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Service {
 
     Random randomCycle = new Random();
-    List lottoSet = new ArrayList();
+    List<int[]> lottoSet = new ArrayList();
 
 
-    public List fiveSets(){
+    public List<int[]> fiveSets(){
         int numOfSet = 5;
         while(numOfSet >0) {
             int[] aSet = this.goLotto();
             lottoSet.add(aSet);
+            Arrays.sort(aSet);
             for (Object checkLottoSet : lottoSet) {
                 if (checkLottoSet==lottoSet){
                     lottoSet.remove(numOfSet);
@@ -53,7 +51,7 @@ public class Service {
             }
 
             aSet[numberOfLotto] = ballNumber;
-            Arrays.sort(aSet);
+//            Arrays.sort(aSet);
 
 
             numberOfLotto++;
@@ -71,6 +69,7 @@ public class Service {
         }
 
         return no1;
+
     }
 
 }

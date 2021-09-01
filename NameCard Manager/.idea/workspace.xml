@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a723a9a9-e78d-465e-81b3-6f7ede9a6f8f" name="Default Changelist" comment="210225_edit">
-      <change afterPath="$PROJECT_DIR$/../Lotto/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lotto/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lotto/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lotto/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lotto/Lotto.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lotto/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lotto/src/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lotto/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lotto/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lotto/src/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lotto/src/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +97,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lotto" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
